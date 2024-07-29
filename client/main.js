@@ -1,6 +1,7 @@
 const socket = io();
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://live-agenda.onrender.com";
 
 const descriptionInput = document.getElementById("task-text");
 const addBtn = document.getElementById("add-task");
