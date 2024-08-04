@@ -29,8 +29,6 @@ addForm.addEventListener("submit", (e) => {
       alert("Error");
       return;
     }
-
-    console.log("SENT")
   });
 })
 
@@ -38,7 +36,6 @@ const renderTasks = async (data) => {
   tasksContainer.innerHTML = "";
 
   data.forEach(task => {
-    console.log(task);
     const div = document.createElement("div");
     const editBtn = document.createElement("button");
     editBtn.innerHTML = "EDIT";

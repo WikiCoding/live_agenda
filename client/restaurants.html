@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurants</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Tasks</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="events.html">Events</a>
+    </nav>
+    <h1>Restaurants</h1>
+    <form id="add-form">
+      <div><label>Restaurant Name</label><input type="text" id="add-name" /></div>
+      <div><label>Restaurant Location</label><input type="text" id="add-location" /></div>
+      <div><label>Restaurant Description</label><textarea type="text" id="add-description" rows="4" cols="50"></textarea></div>
+      <div>
+        <button id="add-restaurant">Add Restaurant</button>
+      </div>
+    </form>
+    <hr />
+    <div>
+      <h3>Restaurants List</h3>
+      <div id="restaurants-container"></div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="restaurants.js"></script>
+  </body>
+</html>

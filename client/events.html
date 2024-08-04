@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Tasks</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="events.html">Events</a>
+    </nav>
+    <h1>Events</h1>
+    <form id="add-form">
+      <div><label>Event Name</label><input type="text" id="add-name" /></div>
+      <div><label>Event Location</label><input type="text" id="add-location" /></div>
+      <div><label>Event Description</label><textarea type="text" id="add-description" rows="4" cols="50"></textarea></div>
+      <div><label>Event Date</label><input type="date" id="add-date" /></div>
+      <div>
+        <button id="add-event">Add Event</button>
+      </div>
+    </form>
+    <hr />
+    <div>
+      <h3>Upcomming Events List</h3>
+      <div id="events-container"></div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="events.js"></script>
+  </body>
+</html>
