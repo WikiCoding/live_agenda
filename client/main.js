@@ -1,21 +1,14 @@
 const socket = io();
 
-// const BASE_URL = "http://localhost:5000";
-const BASE_URL = "https://live-agenda.onrender.com";
-
 const descriptionInput = document.getElementById("task-text");
 const addBtn = document.getElementById("add-task");
 const addForm = document.getElementById("add-form");
 const tasksContainer = document.getElementById("tasks-container");
 
 const initData = async () => {
-  const req = await fetch(`${BASE_URL}/tasks`, {
-    method: "GET"
+  socket.on("ui-update", (data) => {
+    renderTasks(data);
   });
-
-  const data = await req.json();
-
-  renderTasks(data);
 }
 
 initData();

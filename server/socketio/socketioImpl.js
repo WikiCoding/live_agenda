@@ -7,6 +7,10 @@ const socketioRunner = async (httpServer) => {
   io.on("connection", async (socket) => {
     console.log("A user connected", socket.id);
 
+    const tasks = await getTaskList();
+
+    io.emit("ui-update", tasks);
+
     socket.on("add-task", async (description) => {
       if (description.length === 0) return;
 
