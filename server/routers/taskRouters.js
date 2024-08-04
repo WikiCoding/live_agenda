@@ -1,9 +1,9 @@
 const express = require('express');
 const router = new express.Router();
-const getAllTasks = require('../services/taskServices/getAllTasks');
-const addTask = require('../services/taskServices/addTask');
-const updateTask = require('../services/taskServices/updateTask');
-const deleteTask = require('../services/taskServices/deleteTask');
+const getAllTasks = require('../rest_api_services/taskServices/getAllTasks');
+const addTask = require('../rest_api_services/taskServices/addTask');
+const updateTask = require('../rest_api_services/taskServices/updateTask');
+const deleteTask = require('../rest_api_services/taskServices/deleteTask');
 
 router.get('/tasks', getAllTasks);
 

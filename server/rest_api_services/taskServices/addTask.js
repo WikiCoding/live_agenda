@@ -2,6 +2,7 @@ const Task = require("../../models/taskModel");
 
 const addTask = async (req, res) => {
   try {
+    // add validations
     const task = new Task({
       description: req.body.description,
       completed: false

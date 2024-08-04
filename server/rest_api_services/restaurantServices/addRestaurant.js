@@ -2,6 +2,7 @@ const Restaurant = require("../../models/restaurantModel");
 
 const addRestaurant = async (req, res) => {
   try {
+    // add validations
     const restaurant = new Restaurant({
       name: req.body.name,
       location: req.body.location,
@@ -10,7 +11,7 @@ const addRestaurant = async (req, res) => {
 
     await restaurant.save();
 
-    res.status(201).send({ message: 'Created restaurant', task });
+    res.status(201).send({ message: 'Created restaurant', restaurant });
   } catch (err) {
     res.status(400).send({ message: 'Could not add restaurant', error: err });
   }

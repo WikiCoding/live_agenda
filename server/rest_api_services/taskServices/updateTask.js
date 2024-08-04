@@ -4,6 +4,7 @@ const updateTask = async (req, res) => {
   try {
     const task = await Task.findOne({ _id: req.params.id });
 
+    // add validations
     task.description = req.body.description;
     task.completed = req.body.completed;
 
