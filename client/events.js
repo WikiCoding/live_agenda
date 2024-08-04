@@ -3,7 +3,8 @@ const socket = io();
 const nameInput = document.getElementById("add-name");
 const locationInput = document.getElementById("add-location");
 const descriptionInput = document.getElementById("add-description");
-const dateInput = document.getElementById("add-date")
+const dateInput = document.getElementById("add-date");
+const endDateInput = document.getElementById("end-date");
 const addBtn = document.getElementById("add-event");
 const addForm = document.getElementById("add-form");
 const eventsContainer = document.getElementById("events-container");
@@ -36,10 +37,11 @@ const renderEvents = async (data) => {
     div.appendChild(divider);
 
     containerDiv.innerHTML = `
-    <div><strong>Event name: </strong><label>${event.name}</label></div>
-    <div><strong>Event location: </strong><label>${event.location}</label></div>
-    <div><strong>Event descritpion: </strong><label>${event.description}</label></div>
-    <div><strong>Event date: </strong><label>${event.eventDate}</label></div>
+    <div><i class="fas fa-calendar-day"></i> <label>${event.name}</label></div>
+    <div><i class="fas fa-map-marker-alt"></i> <label>${event.location}</label></div>
+    <div><i class="fas fa-info-circle"></i> <label>${event.description}</label></div>
+    <div><i class="fas fa-calendar-alt"></i> <label>${event.eventDate.split("T")[0]}</label></div>
+    <div><i class="fas fa-calendar-alt"></i> <label>${event.eventEndDate.split("T")[0]}</label></div>
     `;
 
     deleteBtn.addEventListener("click", async () => {
@@ -63,10 +65,9 @@ addForm.addEventListener("submit", (e) => {
     name: nameInput.value,
     location: locationInput.value,
     description: descriptionInput.value,
-    eventDate: dateInput.value
+    eventDate: dateInput.value,
+    eventEndDate: endDateInput.value
   };
-
-  console.log(event);
 
   socket.emit("add-event", event, (error) => {
     nameInput.value = "";

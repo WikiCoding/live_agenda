@@ -76,13 +76,14 @@ const socketioRunner = async (httpServer) => {
     });
 
     socket.on("add-event", async (event) => {
-      if (event.name.length === 0 || event.description.length === 0 || event.location.length === 0 || event.eventDate.length === 0) return;
+      if (event.name.length === 0 || event.description.length === 0 || event.location.length === 0 || event.eventDate.length === 0 || event.eventEndDate.length === 0) return;
 
       const rest = new Event({
         name: event.name,
         location: event.location,
         description: event.description,
-        eventDate: Date(event.eventDate)
+        eventDate: new Date(event.eventDate),
+        eventEndDate: new Date(event.eventEndDate)
       });
 
       try {

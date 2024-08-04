@@ -21,6 +21,7 @@ const renderRestaurants = async (data) => {
   data.forEach(restaurant => {
     const div = document.createElement("div");
     const containerDiv = document.createElement("div");
+    containerDiv.classList.add("content");
     const divider = document.createElement("hr");
     const editBtn = document.createElement("button");
     editBtn.innerHTML = "EDIT";
@@ -35,9 +36,9 @@ const renderRestaurants = async (data) => {
     div.appendChild(divider);
 
     containerDiv.innerHTML = `
-    <div><strong>Restaurant name: </strong><label>${restaurant.name}</label></div>
-    <div><strong>Restaurant location: </strong><label>${restaurant.location}</label></div>
-    <div><strong>Restaurant descritpion: </strong><label>${restaurant.description}</label></div>
+    <div><i class="fas fa-user"></i><label>${restaurant.name}</label></div>
+    <div><i class="fas fa-map-marker-alt"></i><label>${restaurant.location}</label></div>
+    <div><i class="fas fa-info-circle"></i><label>${restaurant.description}</label></div>
     `;
 
     deleteBtn.addEventListener("click", async () => {
